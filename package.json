@@ -1,0 +1,20 @@
+{
+  "name": "newstuff",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "example": "npx tsx src/examples/example.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/selenium-webdriver": "^4.1.14",
+    "chromedriver": "^113.0.0",
+    "geckodriver": "^4.0.0",
+    "gts": "^3.1.1",
+    "selenium-webdriver": "^4.9.2",
+    "tsx": "^3.12.7",
+    "typescript": "^5.0.4"
+  }
+}
