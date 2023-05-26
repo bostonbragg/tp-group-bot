@@ -24,11 +24,21 @@ export class SocketBase {
     return StringConstants.EMIT_NO_PROPS_STRING.replace('%emitType%', type);
   }
 
-  on(type: string, functionText: string): string {
-    return StringConstants.ON_STRING.replace('%onType%', type).replace(
+  on(type: string, functionText: string, funcParam: string): string {
+    return StringConstants.ON_STRING.replace('%onType%', type)
+      .replace('%functionText%', functionText)
+      .replace('%funcParam%', funcParam);
+  }
+
+  addEventListener(
+    type: string,
+    functionText: string,
+    funcParam: string
+  ): string {
+    return StringConstants.ADD_EVENT_LISTENER_STRING.replace(
       '%functionText%',
       functionText
-    );
+    ).replace('%funcParam%', funcParam);
   }
 
   changeSetting(name: string, value: string): string {
@@ -36,6 +46,13 @@ export class SocketBase {
       '%settingName%',
       name
     ).replace('%settingValue%', value);
+  }
+
+  forceMovePlayer(name: string, team: number): string {
+    return StringConstants.MOVE_PLAYER_TO_TEAM_STRING.replace(
+      '%playerName%',
+      name
+    ).replace('%teamNum%', `${team}`);
   }
 
   async executeScript(script: string): Promise<void> {

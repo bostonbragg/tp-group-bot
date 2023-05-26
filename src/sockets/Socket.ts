@@ -66,4 +66,8 @@ export class Socket {
   async setOvertime(value: boolean) {
     await this.exe(this.cs('overtime', `${value}`));
   }
+
+  async forcePlayerOnTeam(name: string, team: number) {
+    await this.exe(this.socketBase.forceMovePlayer(name, team));
+  }
 }
